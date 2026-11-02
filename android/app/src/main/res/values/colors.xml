@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Figma "01 Splash" background, so the native launch screen hands off
+         to the Flutter splash without a white flash. -->
+    <color name="launch_background">#19E6C4</color>
+</resources>
