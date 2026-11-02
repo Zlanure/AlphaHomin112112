@@ -9,6 +9,10 @@ import 'app_colors.dart';
 /// [TextLeadingDistribution.even] splits the extra line space equally above
 /// and below the glyphs, the way Figma does, so text sits at the same
 /// position as in the design.
+///
+/// Every style sets [TextStyle.letterSpacing], 0 where Figma has none.
+/// Otherwise the Material theme's default text styles add 0.1–0.5 px of
+/// spacing, which changes where lines wrap.
 abstract final class AppTextStyles {
   static const String fontFamily = 'PlusJakartaSans';
 
@@ -51,6 +55,7 @@ abstract final class AppTextStyles {
     fontSize: 15,
     fontWeight: FontWeight.w400,
     height: 21.8 / 15,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.white,
   );
@@ -61,6 +66,7 @@ abstract final class AppTextStyles {
     fontSize: 15,
     fontWeight: FontWeight.w400,
     height: 21.8 / 15,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.textMuted,
   );
@@ -82,6 +88,7 @@ abstract final class AppTextStyles {
     fontSize: 13,
     fontWeight: FontWeight.w700,
     height: 18.9 / 13,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.white,
   );
@@ -92,6 +99,7 @@ abstract final class AppTextStyles {
     fontSize: 17,
     fontWeight: FontWeight.w800,
     height: 24.7 / 17,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.white,
   );
@@ -103,6 +111,7 @@ abstract final class AppTextStyles {
     fontSize: 17,
     fontWeight: FontWeight.w400,
     height: 21.4 / 17,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.white,
   );
@@ -114,6 +123,7 @@ abstract final class AppTextStyles {
     fontSize: 13,
     fontWeight: FontWeight.w400,
     height: 18.9 / 13,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.warning,
   );
@@ -124,6 +134,7 @@ abstract final class AppTextStyles {
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 16.8 / 12,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.textMuted,
   );
@@ -134,6 +145,7 @@ abstract final class AppTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w700,
     height: 23.2 / 16,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.ink,
   );
@@ -144,6 +156,7 @@ abstract final class AppTextStyles {
     fontSize: 15,
     fontWeight: FontWeight.w700,
     height: 21.8 / 15,
+    letterSpacing: 0,
     leadingDistribution: TextLeadingDistribution.even,
     color: AppColors.mint,
   );

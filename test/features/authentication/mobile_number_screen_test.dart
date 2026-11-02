@@ -26,12 +26,13 @@ Future<void> _pumpScreen(
   Size size = const Size(390, 844),
   double textScale = 1,
   EdgeInsets viewInsets = EdgeInsets.zero,
+  String? pickedPhoneNumber,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
 
-  _mockPhoneHint(tester);
+  _mockPhoneHint(tester, number: pickedPhoneNumber);
   await tester.pumpWidget(
     MaterialApp(
       theme: buildAppTheme(),
@@ -95,8 +96,7 @@ void main() {
   testWidgets('fills the number picked in the Android phone-number picker', (
     tester,
   ) async {
-    _mockPhoneHint(tester, number: '+919876543210');
-    await _pumpScreen(tester);
+    await _pumpScreen(tester, pickedPhoneNumber: '+919876543210');
 
     expect(_fieldText(tester), '98765 43210');
     // The keyboard still opens after picking.

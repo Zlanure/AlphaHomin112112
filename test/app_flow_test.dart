@@ -89,6 +89,7 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
     expect(find.byType(MobileNumberScreen), findsOneWidget);
-    expect(find.text('98765 43210'), findsOneWidget);
+    final field = tester.widget<TextField>(find.byType(TextField));
+    expect(field.controller!.text, '98765 43210');
   });
 }
