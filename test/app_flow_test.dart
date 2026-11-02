@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:homingle/app/app.dart';
-import 'package:homingle/features/authentication/presentation/screens/mobile_number_placeholder_screen.dart';
+import 'package:homingle/features/authentication/presentation/screens/mobile_number_screen.dart';
+import 'package:homingle/features/authentication/presentation/screens/verify_code_placeholder_screen.dart';
 import 'package:homingle/features/onboarding/presentation/screens/welcome_screen.dart';
 import 'package:homingle/features/splash/presentation/screens/splash_screen.dart';
 
@@ -62,11 +63,32 @@ void main() {
 
       await tester.tap(find.text(label));
       await tester.pumpAndSettle();
-      expect(find.byType(MobileNumberPlaceholderScreen), findsOneWidget);
+      expect(find.byType(MobileNumberScreen), findsOneWidget);
 
-      await tester.pageBack();
+      await tester.tap(find.byTooltip('Back'));
       await tester.pumpAndSettle();
       expect(find.byType(WelcomeScreen), findsOneWidget);
     });
   }
+
+  testWidgets('a valid number opens Enter the code with that number', (
+    tester,
+  ) async {
+    await pumpPastSplash(tester);
+    await tester.tap(find.text('Get started'));
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(TextField), '9876543210');
+    await tester.tap(find.text('Send code'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(VerifyCodePlaceholderScreen), findsOneWidget);
+    expect(find.textContaining('+91 98765 43210'), findsOneWidget);
+
+    // Back returns to the number screen with the number still there.
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.byType(MobileNumberScreen), findsOneWidget);
+    expect(find.text('98765 43210'), findsOneWidget);
+  });
 }

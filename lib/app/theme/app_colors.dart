@@ -15,4 +15,20 @@ abstract final class AppColors {
   static const Color photoPlaceholder = Color(0xFFD3DBD5);
 
   static const Color white = Color(0xFFFFFFFF);
+
+  /// Secondary text on dark backgrounds (subtitles, hints, captions).
+  static const Color textMuted = Color(0xFF9DB8B4);
+
+  /// Text field background: white at 8%.
+  static const Color fieldFill = Color(0x14FFFFFF);
+
+  /// Text field border: white at 28%.
+  static const Color fieldBorder = Color(0x47FFFFFF);
+
+  /// Thin separators, such as the line after "+91": white at 12%.
+  static const Color divider = Color(0x1FFFFFFF);
+
+  /// Amber warning colour from Figma "24 Verification failed"; used for
+  /// validation messages (approved for Phase 2).
+  static const Color warning = Color(0xFFFFC46B);
 }

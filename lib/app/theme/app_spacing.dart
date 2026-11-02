@@ -18,4 +18,13 @@ abstract final class AppSpacing {
   /// Figma draws text links 44 px tall. They get a 48 px tap area to meet the
   /// Android minimum, while the label stays where Figma places it.
   static const double linkButtonHeight = 48;
+
+  /// Back button: Figma draws a 44×44 box with 12 px corners, inset 8 px from
+  /// the left edge. It gets a 48 px tap area like the text link.
+  static const double backButtonSize = 44;
+  static const double backButtonRadius = 12;
+  static const double backButtonInset = 8;
+
+  static const double fieldHeight = 58;
+  static const double fieldRadius = 14;
 }

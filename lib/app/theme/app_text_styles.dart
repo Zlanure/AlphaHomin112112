@@ -55,6 +55,79 @@ abstract final class AppTextStyles {
     color: AppColors.white,
   );
 
+  /// Body copy in the secondary colour, e.g. a screen subtitle.
+  static const TextStyle bodyMuted = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 21.8 / 15,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.textMuted,
+  );
+
+  /// Screen title under the back button: ExtraBold 28/32.2, tracking -0.6.
+  static const TextStyle screenTitle = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 28,
+    fontWeight: FontWeight.w800,
+    height: 32.2 / 28,
+    letterSpacing: -0.6,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.white,
+  );
+
+  /// Label above a text field: Bold 13/18.9.
+  static const TextStyle fieldLabel = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 13,
+    fontWeight: FontWeight.w700,
+    height: 18.9 / 13,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.white,
+  );
+
+  /// Fixed "+91" prefix inside the phone field: ExtraBold 17/24.7.
+  static const TextStyle countryCode = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w800,
+    height: 24.7 / 17,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.white,
+  );
+
+  /// Text typed into a field: Regular 17/21.4. Figma shows only the hint, in
+  /// [AppColors.textMuted]; typed text uses white.
+  static const TextStyle input = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 17,
+    fontWeight: FontWeight.w400,
+    height: 21.4 / 17,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.white,
+  );
+
+  /// Validation message under a field. Figma has no error style; this uses
+  /// the field-label size and the Figma warning colour (approved in Phase 2).
+  static const TextStyle fieldError = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    height: 18.9 / 13,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.warning,
+  );
+
+  /// Small print, such as the Terms line: Regular 12/16.8, muted.
+  static const TextStyle caption = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    height: 16.8 / 12,
+    leadingDistribution: TextLeadingDistribution.even,
+    color: AppColors.textMuted,
+  );
+
   /// Label inside the mint pill button: Bold 16/23.2.
   static const TextStyle buttonLabel = TextStyle(
     fontFamily: fontFamily,
